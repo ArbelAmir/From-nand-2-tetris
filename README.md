@@ -1,7 +1,7 @@
 # from nand to tetris highlights
 
 
-Selected projects from nand 2 tetris.
+this repository contains a number of selected projects written for the "from nand 2 tetris" course.
 
-With the exception of Project 09 written in jack, a Java-based language dedicated to the course, 
+With the exception of Project 09 written in Jack language (a Java-like language dedicated to the course),
 the rest of the projects were written in Python.

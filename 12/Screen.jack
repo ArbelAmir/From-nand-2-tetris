@@ -1,0 +1,327 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Screen.jack
+
+/**
+ * A library of functions for displaying graphics on the screen.
+ * The Hack physical screen consists of 512 rows (indexed 0..511, top to bottom)
+ * of 256 pixels each (indexed 0..255, left to right). The top left pixel on 
+ * the screen is indexed (0,0).
+ */
+class Screen {
+
+    static Array bit;
+    static Array screen;
+    static boolean color;
+
+    /** Initializes the Screen. */
+    function void init() {
+        var int i;
+        let screen = 16384;
+        let color = true;
+        let bit = Array.new(17);
+        let bit[0] = 1;
+        while ( i < 16 )
+        {
+            let i = i + 1;
+            let bit[i] = bit[i-1] + bit[i-1];
+        }
+        return;
+    }
+
+
+
+    /** Erases the entire screen. */
+    function void clearScreen() {
+        var int i;
+        while ( i < 8192 )
+        {
+            let screen[i] = 0;
+            let i = i + 1;
+        }
+        return;
+    }
+
+    function void updateLocation(int addr, int bitToDraw)
+    {
+        if ( color )
+        {
+            let screen[addr] = screen[addr] | bitToDraw; 
+        }
+        else
+        {
+            let screen[addr] =  screen[addr] & ~(bitToDraw);
+        }
+        return;
+    }
+
+    /** Sets the current color, to be used for all subsequent drawXXX commands.
+     *  Black is represented by true, white by false. */
+    function void setColor(boolean b) {
+        let color = b;
+        return;
+    }
+
+    /** Draws the (x,y) pixel, using the current color. */
+    function void drawPixel(int x, int y) {
+        var int tempX;
+        var int xModulu16;
+        var int addr;
+
+        if ( (x<0) | (x>511) | (y<0) | (y>255) )
+        {
+            do Sys.error(7);
+        }
+        let tempX = Math.divide(x,16);
+        let xModulu16 = x - Math.multiply(tempX,16);
+        let addr = Math.multiply(y,32) + tempX;
+        do Screen.updateLocation(addr,bit[xModulu16]);
+        return;
+    }
+
+    function void drawConditional(int x, int y, boolean bool)
+    {
+        if (bool)
+        {
+            do Screen.drawPixel(y,x);
+        }
+        else
+        {
+            do Screen.drawPixel(x,y);
+        });
+
+        return;
+    }
+
+    /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
+    function void drawLine(int x1, int y1, int x2, int y2) {
+        var int b;
+        var int a;
+        var int dy;
+        var int dx;
+        var int temp;
+        var int diff;
+        var int yGreaterThenX;
+        var boolean drawUp;
+        var int rightMost;
+        var int twoDy;
+        var int twoDyMinusDx;
+
+
+        if ( (x1 < 0) |  ( x2 > 511) | ( y1 < 0 ) | (y2 > 255) )
+        {
+            do Sys.error(8);
+        }
+        let dx = Math.abs(x2 - x1);
+        let dy = Math.abs(y2 - y1);
+        let yGreaterThenX = (dx < dy);
+        // line is right to left => swap x and y
+        if ( yGreaterThenX & (y2<y1) | (~yGreaterThenX & ( x2 < x1 ))  )
+        {
+            // swap x1,x2 and y1,y2
+            let temp = x1;
+            let x1 = x2;
+            let x2 = temp;
+            let temp = y1;
+            let y1 = y2;
+            let y2 = temp;
+        }
+        //  dy > dx => transpose
+        if ( yGreaterThenX)
+        {
+            let temp = dx;
+            let dx = dy;
+            let dy = temp;
+            let a = y1;
+            let b = x1;
+            let rightMost = y2;
+            let drawUp = (x1 > x2);
+        }
+        else
+        {
+            let a = x1;
+            let b = y1;
+            let rightMost = x2;
+            let drawUp = (y1 > y2);
+        }
+        let diff = Math.multiply(2,dy) - dx;
+        
+        let twoDy = Math.multiply(2,dy);
+        let twoDyMinusDx = Math.multiply(2, dy-dx );
+
+        do Screen.drawConditional(a,b,yGreaterThenX);
+        while ( a < rightMost )
+        {
+            if ( diff < 0 )
+            {
+                let diff = diff + twoDy;
+            }
+            else
+            {
+                let diff = diff + twoDyMinusDx;
+                if ( drawUp )
+                {
+                    let b = b - 1;
+                }
+                else
+                {
+                    let b = b + 1;
+                }
+            }
+            let a = a + 1;
+            do Screen.drawConditional(a,b,yGreaterThenX);
+        }
+        return;
+    }
+
+    /** Draws a filled rectangle whose top left corner is (x1, y1)
+     * and bottom right corner is (x2,y2), using the current color. */
+    function void drawRectangle(int x1, int y1, int x2, int y2) {
+        var int LeftWall;
+        var int rightWall;
+        var int rectByteLen;
+        var int x1Addr;
+        var int x2Addr;
+        var int byte2;
+        var int byte1;
+        var int x1Mod16;
+        var int x2Mod16;
+
+        if ( (x1>x2) | (y1 > y2) | (x1 < 0) | (x2 > 511) | (y1 < 0) | (y2 > 255))
+        {
+            do Sys.error(9);
+        } 
+
+        let x1Addr = Math.divide(x1,16);
+        let x1Mod16 = x1 - Math.multiply(x1Addr,16);                 // draw ending bit for rightMOst wall
+        let x2Addr = Math.divide(x2,16);
+        let x2Mod16 = x2 - Math.multiply(x2Addr,16);                 // draw starting bit for leftMOst wall
+        let byte1 = ~(bit[x1Mod16] - 1);                             // leftwall byte draw template
+        let byte2 = bit[x2Mod16+1] - 1;                              // rightwall byte draw template
+        let LeftWall = Math.multiply(y1,32) + x1Addr;                // left top corner addr
+        let rectByteLen = x2Addr - x1Addr;                           // number of bytes to draw in each row
+       
+        // for row in rows
+        while(~(y1 > y2))
+        {
+            let rightWall = LeftWall + rectByteLen;                 // define right limit
+            if (rectByteLen = 0)                                    
+            {
+                do Screen.updateLocation(LeftWall,byte2 & byte1);   // draw first col
+            }
+            else
+            {
+                do Screen.updateLocation(LeftWall , byte1);         // draw leftMost col
+                let LeftWall = LeftWall + 1;                        // advance col
+
+                
+                while( LeftWall < rightWall)                    
+                {
+                    
+                    do Screen.updateLocation(LeftWall,-1);          // draw all pixels in this col
+                    let LeftWall = LeftWall + 1;                    // advance col
+                }
+                do Screen.updateLocation(rightWall,byte2);          // draw rightMost col
+            }
+            let y1 = y1 + 1;                                        // advance row
+            let LeftWall = rightWall + 32 - rectByteLen;            // get next left Wall address
+        }
+
+        return;
+    }
+
+    function void drawHorizontal(int x1, int y1, int x2)
+    {
+        var int i;
+        var int leftCoor;
+        var int RightCoor;
+        var int maxX;
+        var int byte2;
+        var int byte1;
+        var int horizLen;
+        var int topLeft;
+        var int bottomRight;
+        var int leftMod16;
+        var int rightMod16;
+
+        let topLeft = Math.min(y1,x2);
+        let bottomRight = Math.max(y1,x2);
+
+        if ( (x1 > -1) & (x1 <256) & (topLeft <512) & (bottomRight > -1)  )
+        {
+            let topLeft = Math.max(topLeft,0);
+            let bottomRight = Math.min(bottomRight,511);
+            let leftCoor = Math.divide(topLeft,16);
+            let leftMod16 = topLeft - Math.multiply(leftCoor,16);
+            let RightCoor = Math.divide(bottomRight,16);
+            let rightMod16 = bottomRight - Math.multiply(RightCoor,16);
+            let byte1 = ~(bit[leftMod16] - 1);
+            let byte2 = bit[rightMod16 + 1] - 1;
+            let i = Math.multiply(x1,32) + leftCoor;
+            let horizLen = RightCoor - leftCoor;
+            let maxX = i + horizLen;
+            
+            if (horizLen = 0)
+            {
+                do Screen.updateLocation(i,byte2 & byte1);
+            }
+            else
+            {
+                do Screen.updateLocation(i,byte1);
+                let i = i + 1;
+                while( i < maxX )
+                {
+                    do Screen.updateLocation(i,-1);
+                    let i = i + 1;
+                }
+                    do Screen.updateLocation(maxX,byte2);
+            }
+        }
+        return;
+    }
+
+    function void drawSymetric(int x1, int y1, int x2, int y2)
+    {
+        do Screen.drawHorizontal( y1 - y2 , x1 + x2, x1-x2);
+        do Screen.drawHorizontal( y1 + y2 , x1 + x2,x1-x2);
+        do Screen.drawHorizontal(y1-x2,x1 - y2,x1+y2);
+        do Screen.drawHorizontal(y1+x2,x1 - y2,x1+y2);
+        return;
+    }
+
+    /** Draws a filled circle of radius r<=181 around (x,y), using the current color. */
+    function void drawCircle(int x, int y, int r) {
+        var int i;
+        var int rd;
+        var int mRd;
+
+
+        if ( (x<0) | (x>511) | (y<0) | (y>255)  )
+        {
+            do Sys.error(12);
+        }
+        if ( ((x - r) < 0) | ((x + r) > 511) | ((y - r) < 0) | ((y + r) > 255)  )
+        {
+            do Sys.error(13);
+        }
+        let rd = r;
+        let mRd = 1 - r;
+        do Screen.drawSymetric(x,y,i,rd);
+        while( rd > i )
+        {
+            if ( mRd < 0 )
+            {
+                let mRd = mRd + Math.multiply(2,i) + 3;
+            }
+            else
+            {
+                let mRd = mRd + Math.multiply(2,(i-rd)) + 5;
+                let rd = rd - 1;
+            }
+            let i = i + 1;
+            do Screen.drawSymetric(x,y,i,rd);
+        }
+        return;
+    }
+}

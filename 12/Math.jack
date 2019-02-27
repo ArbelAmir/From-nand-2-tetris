@@ -1,0 +1,173 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A library of commonly used mathematical functions.
+ * Note: Jack compilers implement multiplication and division using OS method calls.
+ */
+class Math {
+
+    static Array twoPow, ySqrs;
+
+    /** Initializes the library. */
+    function void init() {
+        var int counter;
+        let ySqrs = Array.new(16);
+        let twoPow= Array.new(16);
+
+        let twoPow[0] = 1;
+        while (counter < 15) {
+            let counter = counter + 1;
+            let twoPow[counter] = twoPow[counter - 1] + twoPow[counter - 1];
+        }
+
+        return;
+    }
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+        if (x < 0) {
+            let x = -x;
+        }
+        return x;
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x*y and multiply(x,y) return the same value.
+     */
+    function int multiply(int x, int y) {
+        var int result, temp;
+        var int bit, i;
+        var boolean isneg;
+
+        let isneg = ((x < 0) & (y > 0)) | ((x > 0) & (y < 0));
+
+        let x = Math.abs(x);
+        let y = Math.abs(y);
+
+        if (x < y) {    //swap
+            let temp = x;
+            let x = y;
+            let y = temp;
+        }
+
+        while ((bit - 1) < (y - 1)) 
+        {
+            // if i'th bit of y is 1
+            if (~((twoPow[i] & y) = 0)) 
+            {
+                // add shiftedX
+                let result = result + x;
+                // add bit
+                let bit = bit + twoPow[i];
+            }
+            let x = x + x;  // x.shiftRight
+            let i = i + 1;
+        }
+
+        if (isneg) {
+            let result = -result;
+        }
+
+        return result;
+    }
+
+    /** Returns the integer part of x/y.
+     *  When a Jack compiler detects the multiplication operator '/' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x/y and divide(x,y) return the same value.
+     */
+    function int divide(int x, int y) 
+    {
+        var int i, result, isNeg, isYPowOverflaw;
+        if (y = 0) 
+        {
+            do Sys.error(3);
+        }
+        let isNeg = ((x < 0) & (y > 0)) | ((x > 0) & (y < 0));
+
+        // push |y|
+        let ySqrs[0] = Math.abs(y);
+        let x = Math.abs(x);
+
+        // getting recursion stack..
+        while ((i < 15) & (~isySqrsOverflaw)) 
+        {
+            // overflaw check of y: equivalent to check if 2^15-1 < y*2^(i+1)
+            let isySqrsOverflaw = (32767 - (ySqrs[i] - 1)) < (ySqrs[i] - 1);
+            if (~isySqrsOverflaw) 
+            {
+                // push x / 2*|y|
+                let ySqrs[i + 1] = (ySqrs[i]) + (ySqrs[i]);
+             
+                // stop condition check: x < |y|*2^i:
+                let isySqrsOverflaw = ((ySqrs[i + 1]) - 1) > (x - 1);
+                if (~isySqrsOverflaw)
+                {
+                    let i = i + 1;
+                }
+            }
+        }
+        //
+        while (i > (-1)) 
+        {
+            // if (y*2^i - 1) <= x
+            if (~((ySqrs[i] - 1) > (x - 1))) 
+            {
+                // result += 2^i
+                let result = result + twoPow[i];
+                // x -= y*2^i
+                let x = x - ySqrs[i];
+            }
+            let i = i - 1;
+        }
+        if (isNeg) 
+        {
+            let result = -result;
+        }
+        return result;
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+        var int i, temp, tempSqr, y;
+
+        if (x < 0) {
+            do Sys.error(4);
+        }
+
+        let i = 7;
+
+        while (i > -1) {
+            let temp = y + twoPow[i];
+            let tempSqr = Math.multiply(temp, temp);
+            if ( (~(tempSqr > x)) & /* not overflowed **/ (~(tempSqr < 0))) {
+                let y = temp;
+            }
+
+            let i = i - 1;
+
+        }
+        return y;
+    }
+
+    /** Returns the greater number. */
+    function int max(int a, int b) {
+        if (a > b) {
+            let b = a;
+        }
+        return b;
+    }
+
+    /** Returns the smaller number. */
+    function int min(int a, int b) {
+        if (a < b) {
+            let b = a;
+        }
+        return b;
+    }
+}

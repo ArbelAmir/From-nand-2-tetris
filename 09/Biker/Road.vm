@@ -1,0 +1,412 @@
+function Road.new 0
+push constant 10
+call Memory.alloc 1
+pop pointer 0
+push constant 190
+pop this 0
+push constant 10
+pop this 1
+push constant 10
+call Array.new 1
+pop this 2
+push constant 0
+push this 2
+add
+push constant 490
+push constant 210
+push constant 15
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 2
+add
+push constant 235
+push constant 195
+push constant 17
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 2
+add
+push constant 280
+push constant 215
+push constant 13
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 2
+add
+push constant 10
+push constant 202
+push constant 21
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 2
+add
+push constant 320
+push constant 192
+push constant 5
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 2
+add
+push constant 200
+push constant 242
+push constant 30
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 2
+add
+push constant 100
+push constant 237
+push constant 74
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 2
+add
+push constant 450
+push constant 251
+push constant 12
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 2
+add
+push constant 370
+push constant 243
+push constant 10
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 2
+add
+push constant 320
+push constant 240
+push constant 10
+call Line.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 490
+push constant 10
+call Cloud.new 2
+pop this 3
+push constant 6
+push constant 25
+call Cloud.new 2
+pop this 4
+push constant 280
+push constant 50
+call Cloud.new 2
+pop this 5
+push constant 110
+push constant 3
+call Cloud.new 2
+pop this 6
+push constant 76
+push constant 61
+call Cloud.new 2
+pop this 7
+push constant 345
+push constant 30
+call Cloud.new 2
+pop this 8
+call Obstacle.new 0
+pop this 9
+push pointer 0
+call Road.show 1
+pop temp 0
+push pointer 0
+return
+function Road.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Road.disposeAllLines 1
+pop temp 0
+push this 9
+call Obstacle.dispose 1
+pop temp 0
+push this 3
+call Cloud.dispose 1
+pop temp 0
+push this 4
+call Cloud.dispose 1
+pop temp 0
+push this 5
+call Cloud.dispose 1
+pop temp 0
+push this 6
+call Cloud.dispose 1
+pop temp 0
+push this 7
+call Cloud.dispose 1
+pop temp 0
+push this 8
+call Cloud.dispose 1
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Road.disposeAllLines 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Line.dispose 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push this 2
+call Array.dispose 1
+pop temp 0
+push constant 0
+return
+function Road.show 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+call Road.draw 1
+pop temp 0
+push constant 0
+return
+function Road.hide 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+call Road.draw 1
+pop temp 0
+push constant 0
+return
+function Road.draw 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Road.drawAllLines 1
+pop temp 0
+push constant 0
+push this 0
+push constant 511
+push this 0
+call Screen.drawLine 4
+pop temp 0
+push this 3
+call Cloud.draw 1
+pop temp 0
+push this 4
+call Cloud.draw 1
+pop temp 0
+push this 5
+call Cloud.draw 1
+pop temp 0
+push this 6
+call Cloud.draw 1
+pop temp 0
+push this 7
+call Cloud.draw 1
+pop temp 0
+push this 8
+call Cloud.draw 1
+pop temp 0
+push this 9
+call Obstacle.isExists 1
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 9
+call Obstacle.draw 1
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function Road.drawAllLines 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Line.draw 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Road.moveAllLines 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Line.move 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Road.move 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Road.moveAllLines 1
+pop temp 0
+push constant 0
+push this 0
+push constant 511
+push this 0
+call Screen.drawLine 4
+pop temp 0
+push this 3
+call Cloud.move 1
+pop temp 0
+push this 4
+call Cloud.move 1
+pop temp 0
+push this 5
+call Cloud.move 1
+pop temp 0
+push this 6
+call Cloud.move 1
+pop temp 0
+push this 7
+call Cloud.move 1
+pop temp 0
+push this 8
+call Cloud.move 1
+pop temp 0
+push this 9
+call Obstacle.isExists 1
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 9
+call Obstacle.move 1
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push pointer 0
+call Road.createObstacle 1
+pop temp 0
+label IF_END0
+push constant 0
+return
+function Road.createObstacle 0
+push argument 0
+pop pointer 0
+push this 9
+call Obstacle.create 1
+pop temp 0
+push constant 0
+return
+function Road.isHit 0
+push argument 0
+pop pointer 0
+push this 9
+call Obstacle.isExists 1
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 3
+push this 9
+call Obstacle.getLeftX 1
+eq
+push argument 2
+push constant 16
+add
+and
+push this 9
+call Obstacle.getTopY 1
+gt
+return
+label IF_FALSE0
+push constant 0
+return

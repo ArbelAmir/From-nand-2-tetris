@@ -1,0 +1,4137 @@
+function Obstacle.new 0
+push constant 6
+call Memory.alloc 1
+pop pointer 0
+push constant 31
+pop this 0
+push constant 29
+pop this 2
+push constant 174
+pop this 1
+push constant 0
+pop this 4
+push constant 511
+push constant 32
+sub
+pop this 5
+push constant 174
+push constant 32
+call Math.multiply 2
+push constant 31
+add
+pop this 3
+push pointer 0
+return
+function Obstacle.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Obstacle.show 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+call Obstacle.draw 1
+pop temp 0
+push constant 0
+return
+function Obstacle.hide 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw 0
+push argument 0
+pop pointer 0
+push pointer 0
+push this 3
+push this 0
+call Obstacle.drawEntering 3
+pop temp 0
+push pointer 0
+push this 3
+push this 0
+call Obstacle.drawLeaving 3
+pop temp 0
+push constant 0
+return
+function Obstacle.drawEntering 0
+push argument 0
+pop pointer 0
+push argument 2
+push constant 31
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push argument 1
+call Obstacle.draw0 2
+pop temp 0
+label IF_FALSE0
+push argument 2
+push constant 30
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+call Obstacle.draw1 2
+pop temp 0
+label IF_FALSE1
+push argument 2
+push constant 29
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+push argument 1
+call Obstacle.draw2 2
+pop temp 0
+label IF_FALSE2
+push argument 2
+push constant 28
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push pointer 0
+push argument 1
+call Obstacle.draw3 2
+pop temp 0
+label IF_FALSE3
+push argument 2
+push constant 27
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push pointer 0
+push argument 1
+call Obstacle.draw4 2
+pop temp 0
+label IF_FALSE4
+push argument 2
+push constant 26
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push pointer 0
+push argument 1
+call Obstacle.draw5 2
+pop temp 0
+label IF_FALSE5
+push argument 2
+push constant 25
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push pointer 0
+push argument 1
+call Obstacle.draw6 2
+pop temp 0
+label IF_FALSE6
+push argument 2
+push constant 24
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push pointer 0
+push argument 1
+call Obstacle.draw7 2
+pop temp 0
+label IF_FALSE7
+push argument 2
+push constant 23
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push pointer 0
+push argument 1
+call Obstacle.draw8 2
+pop temp 0
+label IF_FALSE8
+push argument 2
+push constant 22
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push pointer 0
+push argument 1
+call Obstacle.draw9 2
+pop temp 0
+label IF_FALSE9
+push argument 2
+push constant 21
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push pointer 0
+push argument 1
+call Obstacle.draw10 2
+pop temp 0
+label IF_FALSE10
+push argument 2
+push constant 20
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push pointer 0
+push argument 1
+call Obstacle.draw11 2
+pop temp 0
+label IF_FALSE11
+push argument 2
+push constant 19
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push pointer 0
+push argument 1
+call Obstacle.draw12 2
+pop temp 0
+label IF_FALSE12
+push argument 2
+push constant 18
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push pointer 0
+push argument 1
+call Obstacle.draw13 2
+pop temp 0
+label IF_FALSE13
+push argument 2
+push constant 17
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push pointer 0
+push argument 1
+call Obstacle.draw14 2
+pop temp 0
+label IF_FALSE14
+push argument 2
+push constant 16
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push pointer 0
+push argument 1
+call Obstacle.draw15 2
+pop temp 0
+label IF_FALSE15
+push constant 0
+return
+function Obstacle.drawLeaving 0
+push argument 0
+pop pointer 0
+push argument 2
+push constant 15
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push argument 1
+call Obstacle.draw16 2
+pop temp 0
+label IF_FALSE0
+push argument 2
+push constant 14
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+call Obstacle.draw17 2
+pop temp 0
+label IF_FALSE1
+push argument 2
+push constant 13
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+push argument 1
+call Obstacle.draw18 2
+pop temp 0
+label IF_FALSE2
+push argument 2
+push constant 12
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push pointer 0
+push argument 1
+call Obstacle.draw19 2
+pop temp 0
+label IF_FALSE3
+push argument 2
+push constant 11
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push pointer 0
+push argument 1
+call Obstacle.draw20 2
+pop temp 0
+label IF_FALSE4
+push argument 2
+push constant 10
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push pointer 0
+push argument 1
+call Obstacle.draw21 2
+pop temp 0
+label IF_FALSE5
+push argument 2
+push constant 9
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push pointer 0
+push argument 1
+call Obstacle.draw22 2
+pop temp 0
+label IF_FALSE6
+push argument 2
+push constant 8
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push pointer 0
+push argument 1
+call Obstacle.draw23 2
+pop temp 0
+label IF_FALSE7
+push argument 2
+push constant 7
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push pointer 0
+push argument 1
+call Obstacle.draw24 2
+pop temp 0
+label IF_FALSE8
+push argument 2
+push constant 6
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push pointer 0
+push argument 1
+call Obstacle.draw25 2
+pop temp 0
+label IF_FALSE9
+push argument 2
+push constant 5
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push pointer 0
+push argument 1
+call Obstacle.draw26 2
+pop temp 0
+label IF_FALSE10
+push argument 2
+push constant 4
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push pointer 0
+push argument 1
+call Obstacle.draw27 2
+pop temp 0
+label IF_FALSE11
+push argument 2
+push constant 3
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push pointer 0
+push argument 1
+call Obstacle.draw28 2
+pop temp 0
+label IF_FALSE12
+push argument 2
+push constant 2
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push pointer 0
+push argument 1
+call Obstacle.draw29 2
+pop temp 0
+label IF_FALSE13
+push argument 2
+push constant 1
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push pointer 0
+push argument 1
+call Obstacle.draw30 2
+pop temp 0
+label IF_FALSE14
+push argument 2
+push constant 0
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push pointer 0
+push argument 1
+call Obstacle.draw31 2
+pop temp 0
+label IF_FALSE15
+push constant 0
+return
+function Obstacle.move 0
+push argument 0
+pop pointer 0
+push this 0
+push constant 1
+sub
+pop this 0
+push this 5
+push constant 1
+sub
+pop this 5
+push this 1
+push constant 32
+call Math.multiply 2
+push this 2
+add
+pop this 3
+push constant 10
+push constant 30
+call Output.moveCursor 2
+pop temp 0
+push this 2
+call Output.printInt 1
+pop temp 0
+push this 2
+push constant 31
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push this 3
+push constant 31
+sub
+push this 0
+push constant 16
+sub
+call Obstacle.drawLeaving 3
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push pointer 0
+push this 3
+push constant 1
+add
+push this 0
+push constant 16
+sub
+call Obstacle.drawLeaving 3
+pop temp 0
+label IF_END0
+push pointer 0
+push this 3
+push this 0
+call Obstacle.drawEntering 3
+pop temp 0
+push pointer 0
+push this 3
+push this 0
+call Obstacle.drawLeaving 3
+pop temp 0
+push pointer 0
+push this 3
+push constant 1
+sub
+push this 0
+push constant 16
+add
+call Obstacle.drawEntering 3
+pop temp 0
+push this 0
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 2
+push constant 2
+sub
+pop this 2
+push this 2
+push constant 1
+neg
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 31
+pop this 2
+push constant 511
+pop this 5
+label IF_FALSE2
+push constant 31
+pop this 0
+label IF_FALSE1
+push constant 0
+return
+function Obstacle.isExists 0
+push argument 0
+pop pointer 0
+push this 4
+return
+function Obstacle.getLeftX 0
+push argument 0
+pop pointer 0
+push this 5
+return
+function Obstacle.getTopY 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 16
+sub
+return
+function Obstacle.create 0
+push argument 0
+pop pointer 0
+push constant 31
+pop this 0
+push constant 0
+not
+pop this 4
+push constant 0
+return
+function Obstacle.draw0 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw1 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw2 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw3 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw4 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 24576
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw5 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 20480
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw6 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 10240
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw7 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 5120
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw8 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 2560
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw9 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 31488
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 28672
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 28672
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 28672
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 28672
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw10 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 17024
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 31744
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 14336
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 14336
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 14336
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 14336
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw11 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 24256
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 32736
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 15872
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 7168
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 7168
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 7168
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 7168
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw12 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 12128
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32760
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 8
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 16400
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32704
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32704
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 7936
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 3584
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 3584
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 3584
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 3584
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw13 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 6064
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 32760
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 8
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 16388
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 4
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 8200
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 8
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 32752
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 32752
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 16352
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 16352
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 3968
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 1792
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 1792
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 1792
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 1792
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw14 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 3032
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 16380
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 32764
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 8194
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 2
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 28668
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 32764
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 16376
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 16376
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 8176
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 8176
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 1984
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 896
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw15 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 1516
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 8190
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 16382
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 28671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 14334
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 16382
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 8188
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 8188
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 4088
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 4088
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 992
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 448
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 448
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 448
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 448
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw16 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 758
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 4095
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 8191
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 14335
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 16383
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 7167
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 8191
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 4094
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 4094
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 2044
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 2044
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 496
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 224
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 224
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 224
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 224
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw17 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 379
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 4095
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 7167
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 8191
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 3583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 4095
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 1022
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 1022
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 248
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 112
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 112
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 112
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 112
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw18 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 189
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 3583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 4095
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 1791
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 124
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 56
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw19 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 94
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 1791
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 895
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 62
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 28
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 28
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 28
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 28
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw20 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 47
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 895
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 447
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 14
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 14
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 14
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 14
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw21 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 23
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 447
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 223
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw22 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 11
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 223
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 111
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw23 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 5
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 111
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 55
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw24 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 2
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 55
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 27
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw25 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 27
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 13
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw26 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 13
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 6
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw27 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 6
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw28 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw29 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw30 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Obstacle.draw31 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
